@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Whac-A-Mole - Un divertido juego arcade retro. ¡Golpea a los topos antes de que se escondan!">
+  <title>🔨 Whac-A-Mole | Arcade Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+  <div class="game-container">
+    
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+      <div class="arcade-cabinet">
+        <h1 class="game-title">
+          <span class="title-line-1">WHAC-A</span>
+          <span class="title-line-2">MOLE</span>
+        </h1>
+        <div class="mole-preview">
+          <div class="preview-mole">🐹</div>
+        </div>
+        <button id="start-btn" class="arcade-btn pulse">
+          <span>▶ INICIAR JUEGO</span>
+        </button>
+        <div class="instructions">
+          <p>🔨 ¡Golpea a los topos antes de que se escondan!</p>
+          <p>⭐ Topos dorados = puntos extra</p>
+          <p>💣 ¡Cuidado con las bombas!</p>
+        </div>
+        <p class="insert-coin blink">— CLICK PARA COMENZAR —</p>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <header class="game-hud">
+        <div class="hud-item">
+          <span class="hud-label">PUNTOS</span>
+          <span id="score" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">NIVEL</span>
+          <span id="level" class="hud-value">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">TIEMPO</span>
+          <span id="timer" class="hud-value">30</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">COMBO</span>
+          <span id="combo" class="hud-value">x1</span>
+        </div>
+      </header>
+
+      <div class="game-board" id="game-board">
+        <div class="hole" data-hole="0">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="0">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="1">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="1">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="2">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="2">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="3">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="3">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="4">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="4">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="5">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="5">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="6">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="6">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="7">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="7">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+        <div class="hole" data-hole="8">
+          <div class="dirt-back"></div>
+          <div class="mole-container">
+            <div class="mole" data-mole="8">
+              <div class="mole-face">🐹</div>
+            </div>
+          </div>
+          <div class="dirt-front"></div>
+        </div>
+      </div>
+
+      <!-- Float score indicators -->
+      <div id="float-scores"></div>
+    </header>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen">
+      <div class="gameover-content">
+        <h2 class="gameover-title">GAME OVER</h2>
+        <div class="final-stats">
+          <div class="stat-row">
+            <span>Puntuación Final</span>
+            <span id="final-score" class="stat-value">0</span>
+          </div>
+          <div class="stat-row">
+            <span>Topos Golpeados</span>
+            <span id="final-hits" class="stat-value">0</span>
+          </div>
+          <div class="stat-row">
+            <span>Combo Máximo</span>
+            <span id="final-combo" class="stat-value">x1</span>
+          </div>
+          <div class="stat-row">
+            <span>Nivel Alcanzado</span>
+            <span id="final-level" class="stat-value">1</span>
+          </div>
+          <div class="stat-row">
+            <span>Precisión</span>
+            <span id="final-accuracy" class="stat-value">0%</span>
+          </div>
+        </div>
+        <div id="high-score-msg" class="high-score-msg hidden">
+          🏆 ¡NUEVO RÉCORD! 🏆
+        </div>
+        <button id="restart-btn" class="arcade-btn pulse">
+          <span>🔄 JUGAR DE NUEVO</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Audio context for sound effects -->
+  <script src="game.js"></script>
+</body>
+</html>
