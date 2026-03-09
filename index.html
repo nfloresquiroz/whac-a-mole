@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Whac-A-Mole - Un divertido juego arcade retro. ¡Golpea a los topos antes de que se escondan!">
-  <title>🔨 Whac-A-Mole | Arcade Game</title>
+  <meta name="description"
+    content="Whac-An-Alien - Misión a Marte. ¡Golpea a los extraterrestres antes de que se escondan en los cráteres!">
+  <title>🚀 Whac-An-Alien | Misión a Marte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="stars"></div>
+  <div class="stars stars-2"></div>
   <div class="scanlines"></div>
   <div class="game-container">
-    
+
     <!-- Title Screen -->
     <div id="title-screen" class="screen active">
       <div class="arcade-cabinet">
+        <div class="planet-mars">🪐</div>
         <h1 class="game-title">
-          <span class="title-line-1">WHAC-A</span>
-          <span class="title-line-2">MOLE</span>
+          <span class="title-line-1">WHAC-AN</span>
+          <span class="title-line-2">ALIEN</span>
         </h1>
+        <div class="subtitle-mission">— MISIÓN A MARTE —</div>
         <div class="mole-preview">
-          <div class="preview-mole">🐹</div>
+          <div class="preview-mole">👾</div>
         </div>
         <button id="start-btn" class="arcade-btn pulse">
-          <span>▶ INICIAR JUEGO</span>
+          <span>🚀 INICIAR MISIÓN</span>
         </button>
         <div class="instructions">
-          <p>🔨 ¡Golpea a los topos antes de que se escondan!</p>
-          <p>⭐ Topos dorados = puntos extra</p>
-          <p>💣 ¡Cuidado con las bombas!</p>
+          <p>🔨 ¡Golpea a los aliens antes de que se escondan!</p>
+          <p>⭐ Aliens dorados = puntos extra</p>
+          <p>☄️ ¡Cuidado con los meteoritos!</p>
         </div>
-        <p class="insert-coin blink">— CLICK PARA COMENZAR —</p>
+        <p class="insert-coin blink">— PRESIONA PARA DESPEGAR —</p>
       </div>
     </div>
 
@@ -62,7 +70,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="0">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -71,7 +79,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="1">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -80,7 +88,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="2">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -89,7 +97,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="3">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -98,7 +106,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="4">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -107,7 +115,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="5">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -116,7 +124,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="6">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -125,7 +133,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="7">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -134,7 +142,7 @@
           <div class="dirt-back"></div>
           <div class="mole-container">
             <div class="mole" data-mole="8">
-              <div class="mole-face">🐹</div>
+              <div class="mole-face">👾</div>
             </div>
           </div>
           <div class="dirt-front"></div>
@@ -143,20 +151,20 @@
 
       <!-- Float score indicators -->
       <div id="float-scores"></div>
-    </header>
     </div>
 
     <!-- Game Over Screen -->
     <div id="gameover-screen" class="screen">
       <div class="gameover-content">
-        <h2 class="gameover-title">GAME OVER</h2>
+        <h2 class="gameover-title">MISIÓN COMPLETA</h2>
+        <div class="gameover-subtitle">🚀 Reporte de Misión 🚀</div>
         <div class="final-stats">
           <div class="stat-row">
             <span>Puntuación Final</span>
             <span id="final-score" class="stat-value">0</span>
           </div>
           <div class="stat-row">
-            <span>Topos Golpeados</span>
+            <span>Aliens Eliminados</span>
             <span id="final-hits" class="stat-value">0</span>
           </div>
           <div class="stat-row">
@@ -173,17 +181,17 @@
           </div>
         </div>
         <div id="high-score-msg" class="high-score-msg hidden">
-          🏆 ¡NUEVO RÉCORD! 🏆
+          🏆 ¡NUEVO RÉCORD INTERGALÁCTICO! 🏆
         </div>
         <button id="restart-btn" class="arcade-btn pulse">
-          <span>🔄 JUGAR DE NUEVO</span>
+          <span>🔄 NUEVA MISIÓN</span>
         </button>
       </div>
     </div>
 
   </div>
 
-  <!-- Audio context for sound effects -->
   <script src="game.js"></script>
 </body>
+
 </html>
