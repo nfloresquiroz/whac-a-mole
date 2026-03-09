@@ -4,7 +4,7 @@ Un juego arcade estilo Whac-A-Mole construido con HTML, CSS y JavaScript puro.
 
 ## 🎮 Jugar
 
-Visita: [whac-a-mole.pages.dev](https://whac-a-mole.pages.dev) *(se actualizará con tu URL)*
+Visita: [whac-a-mole.fnorman040.workers.dev](https://whac-a-mole.fnorman040.workers.dev/)
 
 ## ✨ Features
 
